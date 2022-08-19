@@ -1,0 +1,27 @@
+<!-- <button class="create-post" mat-flat-button color="primary" routerLink="/createpost">
+    <mat-icon>add</mat-icon>
+    Create Post
+</button> -->
+
+<button class="create-post" mat-flat-button color="primary" mat-stroked-button [matMenuTriggerFor]="menu">
+    <mat-icon>add</mat-icon>
+    Create Post
+</button>
+  
+<mat-menu #menu="matMenu" class="matmenu">
+    <button class="menu-item" mat-menu-item routerLink="/csgocreatepost">CSGO</button>
+    <button class="menu-item" mat-menu-item routerLink="/valocreatepost" >Valorant</button>
+    <button class="menu-item" mat-menu-item routerLink="/lolcreatepost">League of Legends</button>
+</mat-menu>
+
+<div class="news">
+    <h1>Esports News</h1>
+    <table class="articles">
+        <tr><app-news-article class="article" headLine="HEROIC BUILT AN AMAZING ROSTER, BUT CAN THEY MAKE IT WORK TILL FALL?" link="https://www.esports.net/news/heroic-roster-is-full-of-potential/" gamePic="../../../../assets/csgologosqr.png"></app-news-article></tr>
+        <tr><app-news-article class="article" headLine="YEKINDAR AND TEAM LIQUID SHOULD DEFINITELY TEAM UP FOR FUTURE EVENTS" link="https://www.esports.net/news/liquid-and-yekindar-should-team-up/" gamePic="../../../../assets/csgologosqr.png"></app-news-article></tr>
+        <tr><app-news-article class="article" headLine="VCT 2022 EMEA LAST CHANCE QUALIFIER – WHO WILL MAKE IT THROUGH?" link="https://www.esports.net/news/vct-2022-emea-last-chance-qualifier-who-will-make-it-through/" gamePic="../../../../assets/valologosqr.png"></app-news-article></tr>
+        <tr><app-news-article class="article" headLine="ORANGUTAN FEMALE TEAM SHIFTS PERCEPTIONS IN THE INDIAN VALORANT SCENE" link="https://www.esports.net/news/orangutan-female-team-shifts-perceptions-in-indian-valorant-scene/" gamePic="../../../../assets/valologosqr.png"></app-news-article></tr>
+        <tr><app-news-article class="article" headLine="IS THE RACE FOR THE CHAMPIONSHIP ALREADY OVER? – LCS WEEK 7" link="https://www.esports.net/news/lcs-week-7-is-the-race-for-the-championship-already-over/" gamePic="../../../../assets/leaguelogosqr.png"></app-news-article></tr>
+        <tr><app-news-article class="article" headLine="RIOT AND ARCANE BUILD WORLDS AND EMOTIONAL CONNECTIONS WITH RUNETERRA" link="https://www.esports.net/news/riot-and-arcane-build-incredible-worlds-for-fans/" gamePic="../../../../assets/leaguelogosqr.png"></app-news-article></tr>
+    </table>
+</div>

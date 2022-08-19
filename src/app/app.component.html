@@ -1,6 +1,26 @@
+<mat-toolbar color="primary">
+  <!-- <button class="button-home" mat-button routerLink=""> -->
+    <img class="logo" src="../../assets/AceEsportsT2.png" (click)="routeHome()">
+  <!-- </button> -->
+  <span (click)="routeHome()">Ace Esports</span>
 
-<div class="container">
-  <div>
-    <router-outlet></router-outlet>
-  </div>
+  
+  <input class="search-input" matInput placeholder="Search" (keydown.enter)="takeSearchBarInput($event)">
+
+  <button class="user-menu" mat-stroked-button [matMenuTriggerFor]="menu">
+    <mat-icon>face</mat-icon>
+    User Name
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </button>
+  
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Sign out</button>
+  </mat-menu>
+</mat-toolbar>
+
+
+<div>
+  <router-outlet></router-outlet>
 </div>

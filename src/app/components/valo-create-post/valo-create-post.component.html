@@ -1,0 +1,17 @@
+<mat-toolbar-row class="toolbar1">
+    
+    <img class="valologo1" src="../../../../assets/valologo.png">
+    
+</mat-toolbar-row>
+<mat-toolbar-row class="toolbar2">
+    
+    <img class="valologo2" src="../../../../assets/valologosqr.png">
+    
+</mat-toolbar-row>
+
+
+<textarea class="title-box" matInput placeholder="Title here" appearance="outline" [(ngModel)]="postTitle"></textarea>
+
+<textarea class="text-box" matInput placeholder="Post here" appearance="outline" [(ngModel)]="postContent"></textarea>
+    
+<button class="post-button" mat-raised-button color="primary" (click)="post()" [disabled]="this.postTitle === undefined || this.postContent === undefined" routerLink="/valorantforum">Post</button>

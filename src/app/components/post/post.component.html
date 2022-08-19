@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-body">
+        <p class="user-name">{{ username }}</p>
+        <p class="title">{{ title }}</p>
+        <mat-divider class="line"></mat-divider>
+        <p class="content">{{ content }}</p>
+        <button class="like-button" [ngClass]="{'liked':isLiked}" (click)="likeTheButton()">
+            Like | <span class="like-counter">{{ likeCount }}</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.create-post {
+    width: 50%;
+    margin-top: 30px;
+    font-size: 18px;
+}
+.news {
+    margin-top: 75px;
+}
+h1 {
+    font-size: 80px;
+}
+.news-title {
+    float: left;
+}
+.articles {
+    padding-top: 80px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 80%;
+}
