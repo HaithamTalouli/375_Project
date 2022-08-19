@@ -1,0 +1,40 @@
+.card {
+    background-color: rgba(190, 180, 180, 0.411);
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px 0 grey;
+    min-height: 100px;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 10px 0 20px 50px;
+}
+
+
+.title {
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.user-name {
+    text-decoration: underline;
+}
+
+.content {
+    font-size: 22px;
+    line-height: 40px;
+}
+
+.line {
+    width: 97%;
+}
+
+.like-button {
+    font-size: 1.6rem;
+    padding: 5px 10px;
+    color: #585858;
+    height: 40px;
+}
+  
+.liked {
+    font-weight: bold;
+    color: #1565c0;
+}

@@ -1,0 +1,35 @@
+<mat-toolbar-row class="toolbar1">
+    
+    <img class="valologo1" src="../../../../assets/valologo.png">
+    
+</mat-toolbar-row>
+<mat-toolbar-row class="toolbar2">
+    
+    <img class="valologo2" src="../../../../assets/valologosqr.png">
+    <div class="buttons">
+        <button mat-button class="button1" id="button1" (click)="hideRulesFun()">Posts</button>
+        <button mat-button class="button2" id="button2" (click)="showRulesFun()">Rules</button>
+    </div>
+    
+</mat-toolbar-row>
+
+<button class="create-post" mat-flat-button color="primary" routerLink="/valocreatepost">
+    <mat-icon>add</mat-icon>
+    Create Post
+</button>
+
+<div class="forum" *ngIf="!showRules"> 
+
+    <div *ngFor="let item of postList.reverse()" class="post-list">
+       <div>
+            <app-post username={{item.user_name}} title={{item.post_title}} content={{item.post_content}} class="post"></app-post>
+       </div>
+    </div>
+    <div class="post-list">
+        <app-post username="otherUser" title="Are we just gonna pretend that Raze isnt overpowered?" content="I just dont get it. They should have removed her in the beta because of how overpowered her nade is!" class="post"></app-post>
+    </div>
+</div>
+
+<div class="rules" *ngIf="showRules"> 
+    <app-rules></app-rules>
+</div>

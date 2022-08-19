@@ -1,0 +1,17 @@
+[
+    {
+        "user_name": "user name 1",
+        "post_title": "post title 1",
+        "post_content": "post content 1"
+    },
+    {
+        "user_name": "user name 2",
+        "post_title": "post title 2",
+        "post_content": "post content 2"
+    },
+    {
+        "user_name": "user name 3",
+        "post_title": "post title 3",
+        "post_content": "post content 3"
+    }
+]
