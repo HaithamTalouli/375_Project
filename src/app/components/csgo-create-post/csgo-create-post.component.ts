@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiserviceService } from 'src/app/apiservice.service';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class CsgoCreatePostComponent implements OnInit {
   }
 
   post(): void {
-    AppService.addCsgoPost("username", this.postTitle, this.postContent)
+    AppService.addCsgoPost(ApiserviceService.user.username, this.postTitle, this.postContent)
   }
 
 }

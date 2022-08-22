@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiserviceService } from './apiservice.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = '375_Project';
+  username: string;
+  constructor(public router: Router) {
+    router.events.subscribe(val => {
+      this.username = ApiserviceService.user.username;
+    });
+  }
 
-  constructor(private router: Router) {}
-
-  routeHome() {
+  signOut() {
     this.router.navigate(['']);
+    ApiserviceService.emptyUser();
   }
 
   takeSearchBarInput(event: any) {

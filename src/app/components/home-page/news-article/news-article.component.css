@@ -33,3 +33,6 @@
 .news-title {
     float: left;
 }
+.news-content {
+    margin-top: 30px;
+}

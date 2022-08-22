@@ -21,6 +21,7 @@
 }
 
 .text-box {
+    line-height: 50px;
     font-size: 30px;
     margin-top: 30px;
     display: flex;
@@ -33,6 +34,7 @@
 }
 
 .title-box {
+    line-height: 50px;
     font-size: 30px;
     margin-top: 50px;
     display: flex;

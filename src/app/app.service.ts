@@ -22,7 +22,6 @@ export class AppService {
     post.post_title = "title";
     post.post_content = "content";
     AppService.csgoPosts = [ post ]
-    console.log("building services")
   }
 
   static addCsgoPost(userName: string, postTitle: string, postContent: string) {
@@ -30,7 +29,6 @@ export class AppService {
     post.user_name = userName;
     post.post_title = postTitle;
     post.post_content = postContent;
-    console.log(typeof AppService.csgoPosts);
     AppService.csgoPosts[AppService.csgoPosts.length]= post ;
   }
 
@@ -43,7 +41,6 @@ export class AppService {
     post.user_name = userName;
     post.post_title = postTitle;
     post.post_content = postContent;
-    console.log(typeof AppService.valoPosts);
     AppService.valoPosts[AppService.valoPosts.length]= post ;
   }
 
@@ -56,7 +53,6 @@ export class AppService {
     post.user_name = userName;
     post.post_title = postTitle;
     post.post_content = postContent;
-    console.log(typeof AppService.lolPosts);
     AppService.lolPosts[AppService.lolPosts.length]= post ;
   }
 

@@ -1,4 +1,4 @@
-
+<div class="page-div">
 <form [formGroup]="registerForm" (ngSubmit)="registerSubmited()" class="border p-3 rounded">
     <div class="row g-0">
         <div class="col text-center p-2 mb-3 bg-light">
@@ -55,4 +55,8 @@
     </div>
 </form>
 
-<button routerLink="/settings">Poop</button>
+<div class="login">
+    <p class="login-link-question">Already have an account?</p>
+    <p class="login-link" target="_blank" routerLink="/login">  Log in here</p>
+</div>
+</div>

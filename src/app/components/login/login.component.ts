@@ -1,12 +1,13 @@
-import { ApiserviceService } from './../apiservice.service';
+import { ApiserviceService } from '../../apiservice.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { concat, empty } from 'rxjs';
+import { Router } from '@angular/router';
 
 interface User{
   username: string,
   email: string,
-  password: string
+  pwd: string
 };
 
 @Component({
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     pwd: new FormControl('', [Validators.required])
   });
 
-  constructor(private service: ApiserviceService) {}
+  constructor(private service: ApiserviceService, public router: Router ) {}
   
 
   ngOnInit(): void {
@@ -45,7 +46,6 @@ export class LoginComponent implements OnInit {
         return;
       }
       ApiserviceService.setUser(res);
-      console.log(ApiserviceService.user);
       var str = JSON.stringify(res);
       var parsedStr = "";
       var previousChar;
@@ -61,11 +61,11 @@ export class LoginComponent implements OnInit {
         }
       }
       user = JSON.parse(parsedStr);     
-      if(user.password != (this.loginForm.value.pwd)){
+      if(user.pwd != (this.loginForm.value.pwd)){
         alert("Invalid password. Please try again.");
         return;
       }
+      setTimeout(() => {  this.router.navigate(['/home']); }, 80);
     });
-    console.log(ApiserviceService.user);
   }
 }

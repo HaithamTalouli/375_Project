@@ -1,0 +1,15 @@
+form{
+    width: 500px;
+}
+
+.login-link {
+    display: inline;
+    color: blue;
+}
+.login-link-question {
+    display: inline;
+}
+.page-div {
+    padding-left: 40%;
+    padding-top: 10%;
+}

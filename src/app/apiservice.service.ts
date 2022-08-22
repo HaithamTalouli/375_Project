@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { delay, Observable } from 'rxjs';
 
 interface User{
   username: string,
@@ -23,13 +23,13 @@ export class ApiserviceService {
 
   //connect frontend
 
-  apiUrl = 'http://localhost:3000/user';
+  apiUrl = 'http://localhost:3000';
 
   //get all data
 
   getAllData():Observable<any>
   {
-    return this._http.get(`${this.apiUrl}`);
+    return this._http.get(`${this.apiUrl}/allusers`);
   }
 
   //create data
@@ -37,25 +37,23 @@ export class ApiserviceService {
   createData(data:any):Observable<any>
   {
     console.log(data, 'createapi=>');
-    return this._http.post(`${this.apiUrl}`,data);
+    return this._http.post(`${this.apiUrl}/user`,data);
   }
 
-  getSingleUser(data:any):Observable<any>
+  getSingleUser(email:any):Observable<any>
   {
-    return this._http.get(`${this.apiUrl}/${data}`);
+    return this._http.get(`${this.apiUrl}/user/${email}`);
   }
   //delete data
 
-  deleteData(data:any):Observable<any>
+  deleteData(email:any):Observable<any>
   {
-    return this._http.delete(`${this.apiUrl}/${data}`);
+    return this._http.delete(`${this.apiUrl}/user/${email}`);
   }
 
   //setter
 
   static setUser(rawJSON: Object){
-    console.log("this is the raw json");
-    console.log(rawJSON);
     var str = JSON.stringify(rawJSON);
       var parsedStr = "";
       var previousChar;
@@ -71,13 +69,17 @@ export class ApiserviceService {
         }
       }
       ApiserviceService.user = JSON.parse(parsedStr); 
-      console.log(ApiserviceService.user);
   }
 
   static setRegisteredUser(username: string, email: string, password: string){
     ApiserviceService.user.username = username;
     ApiserviceService.user.email = email;
     ApiserviceService.user.password = password;
-    console.log(ApiserviceService.user);
+  }
+
+  static emptyUser() {
+    ApiserviceService.user.username = '';
+    ApiserviceService.user.email = '';
+    ApiserviceService.user.password = '';
   }
 }

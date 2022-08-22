@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiserviceService } from 'src/app/apiservice.service';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class LolCreatePostComponent implements OnInit {
   }
 
   post(): void {
-    AppService.addLolPost("username", this.postTitle, this.postContent)
+    AppService.addLolPost(ApiserviceService.user.username, this.postTitle, this.postContent)
   }
 
 }

@@ -1,22 +1,21 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" *ngIf="router.url != '/' && router.url != '/login'">
   <!-- <button class="button-home" mat-button routerLink=""> -->
-    <img class="logo" src="../../assets/AceEsportsT2.png" (click)="routeHome()">
+    <img class="logo" src="../../assets/AceEsportsT2.png" routerLink="/home">
   <!-- </button> -->
-  <span (click)="routeHome()">Ace Esports</span>
-
+  <span routerLink="/home">Ace Esports</span>
   
   <input class="search-input" matInput placeholder="Search" (keydown.enter)="takeSearchBarInput($event)">
 
   <button class="user-menu" mat-stroked-button [matMenuTriggerFor]="menu">
     <mat-icon>face</mat-icon>
-    User Name
+    {{ this.username }}
     <mat-icon>keyboard_arrow_down</mat-icon>
   </button>
   
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Profile</button>
-    <button mat-menu-item>Settings</button>
-    <button mat-menu-item>Sign out</button>
+    <button mat-menu-item routerLink="/profile">Profile</button>
+    <button mat-menu-item routerLink="/settings">Settings</button>
+    <button mat-menu-item (click)="signOut()">Sign out</button>
   </mat-menu>
 </mat-toolbar>
 

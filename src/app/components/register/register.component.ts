@@ -1,6 +1,7 @@
 import { FormGroup, FormControl, Validators, Form } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ApiserviceService } from '../apiservice.service';
+import { ApiserviceService } from '../../apiservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { ApiserviceService } from '../apiservice.service';
 })
 export class RegisterComponent implements OnInit {
   repeatPass: string = 'none';
-  constructor(private service:ApiserviceService ) { }
+  constructor(private service:ApiserviceService, public router: Router ) { }
 
   errormsg:any;
   successmsg:any;
@@ -35,21 +36,14 @@ export class RegisterComponent implements OnInit {
         emailAvailable = false;
       }
       if(this.registerForm.valid && emailAvailable){
-        console.log(this.registerForm.value);
         this.service.createData(this.registerForm.value).subscribe((res)=>{
           console.log(res,'res==>');
-          console.log(this.registerForm.value.username);
           ApiserviceService.setRegisteredUser(this.registerForm.value.username as string, this.registerForm.value.email as string, this.registerForm.value.password as string);
-          console.log(ApiserviceService.user);
           this.registerForm.reset();
         });
+        setTimeout(() => {  this.router.navigate(['/home']); }, 80);
       }
     });
-    console.log(ApiserviceService.user);
-  }
-
-  dummyFunction(){
-    console.log(ApiserviceService.user);
   }
 
   get UserName(): FormControl{

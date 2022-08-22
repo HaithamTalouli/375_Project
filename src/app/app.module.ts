@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common'; 
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -27,13 +27,10 @@ import { PostComponent } from './components/post/post.component';
 import { CsgoCreatePostComponent } from './components/csgo-create-post/csgo-create-post.component';
 import { ValoCreatePostComponent } from './components/valo-create-post/valo-create-post.component';
 import { LolCreatePostComponent } from './components/lol-create-post/lol-create-post.component';
-
-// const appRoutes: Routes = [
-//   {path: '', component: HomePageComponent},
-//   {path: './csgoforum', component: CsgoPostsComponent},
-//   {path: './valorantforum', component: ValoPostsComponent},
-//   {path: './leagueoflegendsforum', component: LolPostsComponent},
-// ];
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,9 +48,13 @@ import { LolCreatePostComponent } from './components/lol-create-post/lol-create-
     CsgoCreatePostComponent,
     ValoCreatePostComponent,
     LolCreatePostComponent,
+    RegisterComponent,
+    LoginComponent,
+    SettingsComponent,
   ],
   imports: [
     // RouterModule.forRoot(appRoutes),
+    
     RouterModule,
     BrowserModule,
     CommonModule,
@@ -67,7 +68,9 @@ import { LolCreatePostComponent } from './components/lol-create-post/lol-create-
     MatMenuModule,
     FormsModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [RouterModule],
   providers: [],
