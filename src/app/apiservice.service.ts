@@ -23,7 +23,7 @@ export class ApiserviceService {
 
   //connect frontend
 
-  apiUrl = 'http://localhost:3000';
+  apiUrl = 'http://talouli.com:8080';
 
   //get all data
 
